@@ -2,6 +2,7 @@ import express, { request, response } from "express";
 import mongoose from "mongoose";
 import { PORT, mongoDBURL } from "./config.js";
 import booksRoute from "./routes/booksRoute.js";
+import cors from "cors";
 
 const app = express();
 
@@ -12,6 +13,9 @@ app.get("/", (request, response) => {
   console.log(request);
   return response.status(200).send("Welcome To MERN Stack Tutorial");
 });
+
+// Middleware for CORS(Cross-Origin Resource Sharing)
+app.use(cors());
 
 // Middleware for creating the request paths
 app.use("/books", booksRoute);
