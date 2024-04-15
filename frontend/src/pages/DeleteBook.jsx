@@ -11,19 +11,27 @@ const DeleteBook = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
 
+  // Function to handle deleting a book
   const handleDeleteBook = () => {
+    // Set loading state to true
     setLoading(true);
+    // Send a DELETE request to the backend API for the specified book ID
     axios
       .delete(`http://localhost:5555/books/${id}`)
       .then(() => {
+        // If request succeeds, set loading state to false
         setLoading(false);
+        // Show success message to user
         enqueueSnackbar("Book Deleted successfully", { variant: "success" });
+        // Navigate to the home page
         navigate("/");
       })
       .catch((error) => {
+        // If request fails, set loading state to false
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        // Show error message to user
         enqueueSnackbar("Error", { variant: "error" });
+        // Log the error to the console for debugging
         console.log(error);
       });
   };

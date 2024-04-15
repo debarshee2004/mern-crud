@@ -9,16 +9,23 @@ const ShowBook = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
+  // useEffect hook to fetch a single book when component mounts
   useEffect(() => {
+    // Set loading state to true
     setLoading(true);
+    // Send a GET request to the backend API to fetch the book for the specified ID
     axios
       .get(`http://localhost:5555/books/${id}`)
       .then((response) => {
+        // If request succeeds, update state with fetched book
         setBook(response.data);
+        // Set loading state to false
         setLoading(false);
       })
       .catch((error) => {
+        // If request fails, log the error to the console for debugging
         console.log(error);
+        // Set loading state to false
         setLoading(false);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -11,16 +11,23 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState("table");
 
+  // useEffect hook to fetch all books when component mounts
   useEffect(() => {
+    // Set loading state to true
     setLoading(true);
+    // Send a GET request to the backend API to fetch all books
     axios
       .get("http://localhost:5555/books")
       .then((response) => {
+        // If request succeeds, update state with fetched books
         setBooks(response.data.data);
+        // Set loading state to false
         setLoading(false);
       })
       .catch((error) => {
+        // If request fails, log the error to the console for debugging
         console.log(error);
+        // Set loading state to false
         setLoading(false);
       });
   }, []);

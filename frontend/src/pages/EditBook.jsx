@@ -14,19 +14,27 @@ const EditBook = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
 
+  // useEffect hook to fetch book details when component mounts
   useEffect(() => {
+    // Set loading state to true
     setLoading(true);
+    // Send a GET request to the backend API to fetch book details for the specified ID
     axios
       .get(`http://localhost:5555/books/${id}`)
       .then((response) => {
+        // If request succeeds, update state with book details
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
         setTitle(response.data.title);
+        // Set loading state to false
         setLoading(false);
       })
       .catch((error) => {
+        // If request fails, set loading state to false
         setLoading(false);
+        // Show alert to user about the error
         alert("An error happened. Please Chack console");
+        // Log the error to the console for debugging
         console.log(error);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps

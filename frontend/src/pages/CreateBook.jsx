@@ -13,24 +13,33 @@ const CreateBooks = () => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
+  // Function to handle saving a book
   const handleSaveBook = () => {
+    // Data object containing book information
     const data = {
       title,
       author,
       publishYear,
     };
+    // Set loading state to true
     setLoading(true);
+    // Send a POST request to the backend API with book data
     axios
       .post("http://localhost:5555/books", data)
       .then(() => {
+        // If request succeeds, set loading state to false
         setLoading(false);
+        // Show success message to user
         enqueueSnackbar("Book Created successfully", { variant: "success" });
+        // Navigate to the home page
         navigate("/");
       })
       .catch((error) => {
+        // If request fails, set loading state to false
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        // Show error message to user
         enqueueSnackbar("Error", { variant: "error" });
+        // Log the error to the console for debugging
         console.log(error);
       });
   };
