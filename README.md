@@ -1,4 +1,5 @@
-# MERN CRUD
+![Mern Crud](https://github.com/debarshee2004/mern_crud/assets/129538241/8e0f6ab4-f7a2-46ef-b860-36d1f03df1c5)
+
 
 ## What is CRUD?
 
