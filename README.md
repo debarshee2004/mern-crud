@@ -2,7 +2,7 @@
 
 ## What is CRUD?
 
-CRUD stands for Create, Read, Update, and Delete. It's a set of basic operations that are fundamental to most database-driven applications. Here's a breakdown of each operation:
+CRUD stands for **Create**, **Read**, **Update**, and **Delete**. It's a set of basic operations that are fundamental to most database-driven applications. Here's a breakdown of each operation:
 
 1. **Create**: This operation involves creating new records or entries in the database. For example, when a user fills out a form on a website to register, the data they submit is used to create a new user record in the database.
 
@@ -23,27 +23,6 @@ Now, let's discuss how to use the MERN stack (MongoDB, Express.js, React, Node.j
 3. **React**: React is a JavaScript library for building user interfaces. It allows you to create reusable UI components that update efficiently in response to data changes. In a MERN stack application, you would use React to build the frontend interface that interacts with the user and displays data retrieved from the backend.
 
 4. **Node.js**: Node.js is a JavaScript runtime environment that allows you to run JavaScript code outside of a web browser. It's commonly used for building server-side applications, including web servers. In a MERN stack application, you would use Node.js to run your backend server, handle incoming HTTP requests, and interact with the database (MongoDB) to perform CRUD operations.
-
-Here's a high-level overview of how you would use the MERN stack for CRUD operations:
-
-1. **Create**:
-
-   - Frontend (React): Create a form component to collect user input.
-   - Backend (Express.js): Define a route to handle POST requests and insert new data into the database.
-
-2. **Read**:
-
-   - Frontend (React): Fetch data from the backend using HTTP requests.
-   - Backend (Express.js): Define routes to handle GET requests and retrieve data from the database.
-
-3. **Update**:
-
-   - Frontend (React): Create an edit form component to allow users to modify existing data.
-   - Backend (Express.js): Define routes to handle PUT or PATCH requests and update data in the database.
-
-4. **Delete**:
-   - Frontend (React): Implement a delete button or functionality to allow users to delete data.
-   - Backend (Express.js): Define routes to handle DELETE requests and remove data from the database.
 
 ## Project Setup.
 
